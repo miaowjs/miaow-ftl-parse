@@ -44,6 +44,6 @@ describe('miaow-ftl-parse', function () {
   });
 
   it('是否编译成功', function () {
-    assert.equal(log.modules['foo.ftl'].hash, 'b18a1777963bdaccb710d862587c3ac4');
+    assert.equal(log.modules['foo.ftl'].hash, '301d47e1ba2f8df1d4463e5c3e65e798');
   });
 });
