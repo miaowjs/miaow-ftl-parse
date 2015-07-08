@@ -5,3 +5,5 @@
 
 <@staticJS file=['foo.js', 'bar.js'] />
 <@staticCSS file=['foo.css', 'bar.css'] />
+
+<#include "bar" >
