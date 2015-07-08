@@ -22,6 +22,7 @@ describe('miaow-ftl-parse', function () {
             plugins: [{
               plugin: parse,
               option: {
+                debug: true,
                 macroNameList: ['static', 'staticJS', 'staticCSS'],
                 macroArgList: ['js', 'css', 'file']
               }
@@ -44,6 +45,6 @@ describe('miaow-ftl-parse', function () {
   });
 
   it('是否编译成功', function () {
-    assert.equal(log.modules['foo.ftl'].hash, '301d47e1ba2f8df1d4463e5c3e65e798');
+    assert.equal(log.modules['foo.ftl'].hash, '1dd7d6702a7969210505eb7912aaf172');
   });
 });
