@@ -47,4 +47,11 @@ describe('miaow-ftl-parse', function () {
   it('是否编译成功', function () {
     assert.equal(log.modules['foo.ftl'].hash, '1dd7d6702a7969210505eb7912aaf172');
   });
+
+  it('是否添加依赖', function () {
+    var dependencies = log.modules['foo.ftl'].dependencies;
+
+    assert.equal(dependencies.length, 9);
+    assert.notEqual(dependencies.indexOf('bower_components/bar/main.ftl'), -1);
+  });
 });
