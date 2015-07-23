@@ -13,10 +13,11 @@
     "ftl"
   ],
   "dependencies": {
-    "async": "~0.9.0"
+    "async": "~0.9.0",
+    "miaow-util": "~0.4.0"
   },
   "devDependencies": {
-    "miaow": "^1.4.0",
+    "miaow": "^2.4.1",
     "mocha": "^2.2.4"
   },
   "scripts": {
