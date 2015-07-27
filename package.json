@@ -1,7 +1,7 @@
 {
   "name": "miaow-ftl-parse",
   "description": "Miaow的FTL编译工具",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "repository": "miaowjs/miaow-ftl-parse",
   "author": {
     "name": "anhulife",
@@ -17,7 +17,7 @@
     "miaow-util": "~0.4.0"
   },
   "devDependencies": {
-    "miaow": "^2.4.1",
+    "miaow": "^2.5.1",
     "mocha": "^2.2.4"
   },
   "scripts": {
