@@ -49,9 +49,9 @@ describe('miaow-ftl-parse', function () {
   });
 
   it('是否添加依赖', function () {
-    var dependencies = log.modules['foo.ftl'].dependencies;
+    var dependList = log.modules['foo.ftl'].dependList;
 
-    assert.equal(dependencies.length, 9);
-    assert.notEqual(dependencies.indexOf('bower_components/bar/main.ftl'), -1);
+    assert.equal(dependList.length, 5);
+    assert.notEqual(dependList.indexOf('bower_components/bar/main.ftl'), -1);
   });
 });
