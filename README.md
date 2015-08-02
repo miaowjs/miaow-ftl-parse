@@ -45,4 +45,5 @@ module: {
 
 * macroNameList 默认值为`['static']`, 宏名称的列表
 * macroArgList 默认值为`['js', 'css']`, 宏参数名的列表
+* macroDebug 默认为`true`, 是否生成宏`*Debug`参数
 * debug 默认为`undefined`, 是否启用调试模式, 如果启用, 就会在FTL文件顶部添加`<#assign __debug__ = true />`语句
