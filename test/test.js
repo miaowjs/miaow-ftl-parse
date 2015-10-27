@@ -1,57 +1,34 @@
 var assert = require('assert');
+var find = require('lodash.find');
 var fs = require('fs');
 var miaow = require('miaow');
 var path = require('path');
 
 var parse = require('../index');
-describe('miaow-ftl-parse', function () {
+describe('miaow-ftl-parse', function() {
   this.timeout(10e3);
 
   var log;
 
-  before(function (done) {
-    miaow.compile({
-      cwd: path.resolve(__dirname, './fixtures'),
-      output: path.resolve(__dirname, './output'),
-      pack: false,
-      domain: 'http://www.foo.com',
-      module: {
-        tasks: [
-          {
-            test: /\.ftl/,
-            plugins: [{
-              plugin: parse,
-              option: {
-                debug: true,
-                macroNameList: ['static', 'staticJS', 'staticCSS'],
-                macroArgList: ['js', 'css', 'file']
-              }
-            }]
-          }
-        ]
-      }
-    }, function (err) {
+  before(function(done) {
+    miaow({
+      context: path.resolve(__dirname, './fixtures')
+    }, function(err) {
       if (err) {
-        console.error(err.toString());
+        console.error(err.toString(), err.stack);
         process.exit(1);
       }
+
       log = JSON.parse(fs.readFileSync(path.resolve(__dirname, './output/miaow.log.json')));
       done();
     });
   });
 
-  it('接口是否存在', function () {
+  it('接口是否存在', function() {
     assert(!!parse);
   });
 
-  it('是否编译成功', function () {
-    assert.equal(log.modules['foo.ftl'].hash, '1dd7d6702a7969210505eb7912aaf172');
-  });
-
-  it('是否添加依赖', function () {
-    var dependList = log.modules['foo.ftl'].dependList;
-
-    assert.equal(dependList.length, 5);
-    assert.notEqual(dependList.indexOf('bower_components/bar/main.ftl'), -1);
+  it('是否编译成功', function() {
+    assert.equal(find(log.modules, {src: 'foo.ftl'}).destHash, '67e81d82669c9a00c95bc83ad99ded3d');
   });
 });
