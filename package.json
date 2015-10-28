@@ -1,7 +1,7 @@
 {
   "name": "miaow-ftl-parse",
   "description": "Miaow的FTL编译工具",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "repository": "miaowjs/miaow-ftl-parse",
   "author": {
     "name": "anhulife",
@@ -15,10 +15,10 @@
   "dependencies": {
     "async": "~1.4.2",
     "lodash.uniq": "~3.2.2",
-    "miaow-util": "/Users/anhulife/Source/personal/miaow-util"
+    "miaow-util": "~1.0.0"
   },
   "devDependencies": {
-    "miaow": "/Users/anhulife/Source/personal/miaow",
+    "miaow": "^5.0.0",
     "mocha": "^2.3.3",
     "eslint": "^1.7.2",
     "eslint-config-airbnb": "^0.1.0",
