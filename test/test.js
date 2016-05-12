@@ -30,5 +30,6 @@ describe('miaow-ftl-parse', function() {
 
   it('是否编译成功', function() {
     assert.equal(find(log.modules, {src: 'foo.ftl'}).destHash, '67e81d82669c9a00c95bc83ad99ded3d');
+    assert.equal(find(log.modules, {src: 'import.ftl'}).destHash, 'aceba853674effb7ac0cf8c03a288f70');
   });
 });
